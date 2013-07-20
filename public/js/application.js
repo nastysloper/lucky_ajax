@@ -18,4 +18,12 @@ $(document).ready(function () {
   //   4- use jQuery to submit an AJAX post to the form's action
   //   5- when the AJAX post is done, replace the contents of the "#die" DIV in the DOM using jQuery
 
+$('.container').on("submit", '#rollForm', function(e){
+  e.preventDefault()
+  $.post("/rolls", function(data){
+    $('#die').html(data)
+  })
+})
+
+
 });

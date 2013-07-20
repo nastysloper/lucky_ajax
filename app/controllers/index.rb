@@ -10,15 +10,17 @@ post '/rolls' do
   
   value = params[:value] ? params[:value].to_i : nil
 
-  #value = params[:value]
+  #value = params[:value] => this is minimal code for javascript-only app. value will never be nil.
 
   @roll = value ? Roll.create({ value: value }) : Roll.create
   #@roll = Roll.create({ value: value })
 
-  #if request.xhr?
-  #  erb :roll, :layout => false
-  #else
+  if request.xhr?
+    erb :roll, :layout => false
+  else
     erb :index  # HINT: what does this do? what should we do instead?
-  #end
+                # This causes the page to reload.
+                # You don't want the page to reload. You want to render the partial.
+  end
 
 end

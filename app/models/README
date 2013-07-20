@@ -6,7 +6,11 @@ rake generate:model NAME=User
 
 Images are saved in the /public folder
 
-The app does not break without AJAX.
+Partials: I just rendered the Yak! partial. Whoa. So, there you have it: you don't just use
+AJAX to use partials. You don't even need to specify layout => false! Crazy.
+
+The app does not break without AJAX. I did change the code and then the 
+whole page was inserted (appended) into that slot (line 11 on index.erb)
 You end up appending the whole page where the image
 of the die is supposed to go.
 
@@ -20,3 +24,8 @@ validates :value, :inclusion => { :in => (1..6), :message => "Must be between 1 
 it validates an attribute, value, then there is a key-value pair, where the value is a hash
 of two key-value pairs. Validates inclusion means that value includes the stuff in the value
 end of the key-value pair.
+
+
+******************************************************************************************
+What's happening in the JavaScript?
+

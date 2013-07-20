@@ -6,6 +6,17 @@ rake generate:model NAME=User
 
 Images are saved in the /public folder
 
-The app breaks without AJAX. You end up appending the whole page where the image
+The app does not break without AJAX.
+You end up appending the whole page where the image
 of the die is supposed to go.
 
+If there is no JavaScript function, the page simply re-loads with the new die image.
+
+*****************************************************************************************
+validates inclusion is an interesting statement. Here it is:
+
+validates :value, :inclusion => { :in => (1..6), :message => "Must be between 1 and 6" } 
+
+it validates an attribute, value, then there is a key-value pair, where the value is a hash
+of two key-value pairs. Validates inclusion means that value includes the stuff in the value
+end of the key-value pair.

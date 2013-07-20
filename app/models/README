@@ -3,3 +3,9 @@ Add your ActiveRecord models here.
 You can create them by being in the application root directory and running, e.g.,
 
 rake generate:model NAME=User
+
+Images are saved in the /public folder
+
+The app breaks without AJAX. You end up appending the whole page where the image
+of the die is supposed to go.
+

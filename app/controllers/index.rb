@@ -3,6 +3,8 @@ get '/' do
   erb :index
 end
 
+Awesome! Sinatra!
+
 post '/rolls' do
 
   # If the user passes-in a "value", let's use it. Otherwise, we'll generate a random one.

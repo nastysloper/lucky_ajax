@@ -1,6 +1,6 @@
 get '/' do
-  @roll = Roll.create # I added this line so the die appears upon initial page load.
-  erb :index
+  @roll = Roll.create
+    erb :index
 end
 
 post '/rolls' do
@@ -10,17 +10,23 @@ post '/rolls' do
   
   value = params[:value] ? params[:value].to_i : nil
 
-  #value = params[:value] => this is minimal code for javascript-only app. value will never be nil.
 
   @roll = value ? Roll.create({ value: value }) : Roll.create
-  #@roll = Roll.create({ value: value })
 
   if request.xhr?
-    erb :roll, :layout => false
+    erb :roll
   else
     erb :index  # HINT: what does this do? what should we do instead?
                 # This causes the page to reload.
-                # You don't want the page to reload. You want to render the partial.
+                # You don't want the page to reload. You want to render the _dice_image.erb partial.
   end
+
+post '/jax' do
+  # next attempt at some AJAX wizardy
+
+  puts params[:jaxster]
+
+  erb :jaxs
+end
 
 end

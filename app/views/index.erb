@@ -1,6 +1,10 @@
 <div class="container">
   <h1>Simplest Possible AJAX</h1>
+
+  <!-- this line is nothing more than an experiment with a partial -->
   <%= erb :_yack %>
+  
+
   <p>This contrived app will simulate a roll of a 6-sided die.</p>
 
   <form id="rollForm" method="post" action="/rolls">
@@ -13,4 +17,16 @@
     <% end %>
   </div>
 
+</div>
+
+<div id="jax">
+  <p>What will be here?</p>
+</div>
+
+<div>
+  <form id="jaxForm" method="post" action="/jax">
+    <label>jaxster input</label>
+    <input type="text" name="jaxster">
+    <input type="submit" value="Roll the Jax, sucker!">
+  </form>
 </div>

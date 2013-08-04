@@ -8,6 +8,9 @@ Images are saved in the /public folder
 
 Partials: I just rendered the Yak! partial. Whoa. So, there you have it: you don't just use
 AJAX to use partials. You don't even need to specify layout => false! Crazy.
+You don't even need layout => false with the die. There's nothing in the layout that
+affects the die. I guess it's just good practice to style your partial independently.
+
 
 The app does not break without AJAX. I did change the code and then the 
 whole page was inserted (appended) into that slot (line 11 on index.erb)
